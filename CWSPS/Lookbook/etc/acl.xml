@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magento_Backend::content">
+                    <resource id="CWSPS_Lookbook::lookbook" title="Lookbook" translate="title">
+                        <resource id="CWSPS_Lookbook::view_groups" title="View Groups"
+                                  translate="title" sortOrder="30"/>
+                        <resource id="CWSPS_Lookbook::create_groups" title="Create Groups" translate="title"
+                                  sortOrder="40"/>
+                        <resource id="CWSPS_Lookbook::edit_groups" title="Edit Groups" translate="title"
+                                  sortOrder="50"/>
+                        <resource id="CWSPS_Lookbook::delete_groups" title="Delete Groups" translate="title"
+                                  sortOrder="60"/>
+                        <resource id="CWSPS_Lookbook::view_lookbook_images" title="View Lookbook Images" translate="title"
+                                  sortOrder="70"/>
+                        <resource id="CWSPS_Lookbook::create_lookbook_images" title="Create Lookbook Images" translate="title"
+                                  sortOrder="80"/>
+                        <resource id="CWSPS_Lookbook::edit_lookbook_images" title="Edit Lookbook Images" translate="title"
+                                  sortOrder="90"/>
+                        <resource id="CWSPS_Lookbook::delete_lookbook_images" title="Delete Lookbook Images" translate="title"
+                                  sortOrder="100"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

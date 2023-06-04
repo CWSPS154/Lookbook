@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="CWSPS\Lookbook\Api\Data\GroupsInterface" type="CWSPS\Lookbook\Model\Groups"/>
+    <preference for="CWSPS\Lookbook\Api\GroupsSearchResultsInterface" type="CWSPS\Lookbook\Model\GroupsSearchResults"/>
+    <preference for="CWSPS\Lookbook\Api\GroupsRepositoryInterface" type="CWSPS\Lookbook\Model\GroupsRepository"/>
+    <virtualType name="CWSPS\Lookbook\Model\ResourceModel\Groups\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">cwsps_lookbook_groups</argument>
+            <argument name="resourceModel" xsi:type="string">CWSPS\Lookbook\Model\ResourceModel\Groups</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="lookbook_data_source" xsi:type="string">
+                    CWSPS\Lookbook\Model\ResourceModel\Groups\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

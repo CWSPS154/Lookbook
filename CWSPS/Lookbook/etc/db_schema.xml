@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="cwsps_lookbook_groups" resource="default" engine="innodb" comment="Lookbook Group Table">
+        <column xsi:type="int" name="entity_id" padding="11" unsigned="true" nullable="false" identity="true"
+                comment="ID"/>
+        <column xsi:type="varchar" name="name" length="100" nullable="false" comment="Group Name"/>
+        <column xsi:type="varchar" name="identifier" length="100" nullable="false" comment="Group Identitfier"/>
+        <column xsi:type="varchar" name="button_label" length="100" nullable="false" comment="Group Button Label"/>
+        <column xsi:type="varchar" name="button_link" length="100" nullable="false" comment="Group Button Link"/>
+        <column xsi:type="smallint" name="width" padding="11" unsigned="true" nullable="false" identity="false"
+                comment="Width"/>
+        <column xsi:type="smallint" name="height" padding="11" unsigned="true" nullable="false" identity="false"
+                comment="Height"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+    </table>
+    <table name="cwsps_lookbook_images" resource="default" engine="innodb" comment="Lookbook Images Table">
+        <column xsi:type="int" name="entity_id" padding="11" unsigned="true" nullable="false" identity="true"
+                comment="ID"/>
+        <column xsi:type="int" name="group_id" padding="11" unsigned="true" identity="false" nullable="false"
+                comment="Groups id"/>
+        <column xsi:type="varchar" name="image_url" length="255" nullable="false" comment="Image url"/>
+        <column xsi:type="varchar" name="title" length="255" nullable="false" comment="Title"/>
+        <column xsi:type="varchar" name="subtitle" length="255" nullable="false" comment="Subtitle"/>
+        <column xsi:type="int" name="sort_order" padding="10" unsigned="true" nullable="false" comment="Sort order"/>
+        <column xsi:type="smallint" name="status" padding="2" unsigned="true" nullable="false" default="0"
+                comment="Status"/>
+        <column xsi:type="varchar" name="content" length="255" nullable="false" comment="Content"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="CWSPS_LOOKBOOK_IMAGE_GROUP_ID_CWSPS_LOOKBOOK_GROUPS_ENTITY_ID"
+                    table="lookbook_image" column="group_id" referenceTable="cwsps_lookbook_groups"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+    <table name="cwsps_lookbook_image_dot" resource="default" engine="innodb" comment="Lookbook Image Dot Table">
+        <column xsi:type="int" name="entity_id" padding="11" unsigned="false" nullable="false" identity="true"
+                comment="ID"/>
+        <column xsi:type="int" name="image_id" padding="11" unsigned="true" identity="false" nullable="false"
+                comment="Lookbook image id"/>
+        <column xsi:type="int" name="product_id" padding="10" unsigned="true" nullable="false" comment="Product id"/>
+        <column xsi:type="smallint" name="status" padding="10" unsigned="true" nullable="false" comment="Status"/>
+        <column xsi:type="varchar" name="top" length="255" nullable="false" comment="Top"/>
+        <column xsi:type="varchar" name="left" length="255" nullable="false" comment="Left"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="CWSPS_LOOKBOOK_IMAGE_DOT_IMAGE_ID_CWSPS_LOOKBOOK_IMAGES_ENTITY_ID"
+                    table="lookbook_image_dot" column="image_id" referenceTable="cwsps_lookbook_images"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+</schema>

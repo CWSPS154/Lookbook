@@ -1,0 +1,46 @@
+{
+    "cwsps_lookbook_groups": {
+        "column": {
+            "entity_id": true,
+            "name": true,
+            "identifier": true,
+            "button_label": true,
+            "button_link": true,
+            "width": true,
+            "height": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "cwsps_lookbook_images": {
+        "column": {
+            "entity_id": true,
+            "group_id": true,
+            "image_url": true,
+            "title": true,
+            "subtitle": true,
+            "sort_order": true,
+            "status": true,
+            "content": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "CWSPS_LOOKBOOK_IMAGES_GROUP_ID_CWSPS_LOOKBOOK_GROUPS_ENTITY_ID": true
+        }
+    },
+    "cwsps_lookbook_image_dot": {
+        "column": {
+            "entity_id": true,
+            "image_id": true,
+            "product_id": true,
+            "status": true,
+            "top": true,
+            "left": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "CWSPS_LOOKBOOK_IMAGE_DOT_IMAGE_ID_CWSPS_LOOKBOOK_IMAGES_ENTT_ID": true
+        }
+    }
+}
