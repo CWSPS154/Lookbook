@@ -14,7 +14,7 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="lookbook_data_source" xsi:type="string">
+                <item name="lookbook_group_listing_data_source" xsi:type="string">
                     CWSPS\Lookbook\Model\ResourceModel\Groups\Grid\Collection
                 </item>
             </argument>

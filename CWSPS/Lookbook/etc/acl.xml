@@ -13,10 +13,8 @@
                 <resource id="Magento_Backend::content">
                     <resource id="CWSPS_Lookbook::lookbook" title="Lookbook" translate="title">
                         <resource id="CWSPS_Lookbook::view_groups" title="View Groups"
-                                  translate="title" sortOrder="30"/>
-                        <resource id="CWSPS_Lookbook::create_groups" title="Create Groups" translate="title"
-                                  sortOrder="40"/>
-                        <resource id="CWSPS_Lookbook::edit_groups" title="Edit Groups" translate="title"
+                                  translate="title" sortOrder="40"/>
+                        <resource id="CWSPS_Lookbook::create_edit_groups" title="Create And Edit Groups" translate="title"
                                   sortOrder="50"/>
                         <resource id="CWSPS_Lookbook::delete_groups" title="Delete Groups" translate="title"
                                   sortOrder="60"/>

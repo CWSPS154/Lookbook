@@ -13,12 +13,12 @@
  *
  * @link https://github.com/CWSPS154
  *
- * Date 03/06/23
+ * Date 04/06/23
  * */
 
 declare(strict_types=1);
 
-namespace CWSPS\Lookbook\Controller\AdminHtml\Index;
+namespace CWSPS\Lookbook\Controller\AdminHtml\Group;
 
 use CWSPS\Lookbook\Model\Config;
 use Magento\Backend\App\Action;
@@ -30,9 +30,9 @@ use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
 
-class Index extends Action implements HttpGetActionInterface
+class Edit extends Action implements HttpGetActionInterface
 {
-    public const ADMIN_RESOURCE = 'CWSPS_Lookbook::view_groups';
+    public const ADMIN_RESOURCE = 'CWSPS_Lookbook::create_edit_groups';
 
     /**
      * @param Context $context
@@ -61,7 +61,7 @@ class Index extends Action implements HttpGetActionInterface
         $resultPage = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
         $resultPage->setActiveMenu('CWSPS_Lookbook::lookbook')
             ->addBreadcrumb(__('Lookbook Menu'), __('Lookbook'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Manage Lookbook'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Edit Group'));
         return $resultPage;
     }
 }
